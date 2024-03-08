@@ -1,0 +1,43 @@
+{% extends 'base_template.html' %}
+
+{% block title %} Ajouter un cours {% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="signup-div col-12 container">
+        <h3>
+            Ajouter un cours
+        </h3>
+        <fieldset>
+            <form enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+
+                {% if field.name == 'utilisateur' %}
+                <input type="hidden" name="utilisateur" value={{user.id}} />
+                {% else %}
+                <div>
+                    <label>{{ field.label }}</label>
+                </div>
+                <div>
+                    {{ field }}
+                </div>
+                {% endif %}
+                <br> 
+                
+                {% endfor %}
+                <br>
+                <div class="container">
+                    <button class="btn btn-primary w-50" type="submit">Créer</button>
+                </div>
+
+            </form>
+        </fieldset>
+
+    </div>
+
+</div>
+
+{% endblock %}

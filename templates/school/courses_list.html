@@ -1,0 +1,27 @@
+
+{% extends 'base_template.html' %}
+
+{% block content %}
+<section class="container"> 
+<h5 class="text-success">{{ msg }}</h5>
+
+<a class="btn btn-success mb-4" href="{% url 'create-course' %}">Ajouter un cours</a>
+<table class="table table-striped w-75">
+    <thead>
+        <tr><th> Intitulé</th><th>Classe</th><th></th></tr>
+    </thead>
+    <tbody>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.nom }}</td>
+            <td>{{ course.classe }}</td>
+            <td><a class="btn btn-secondary" href="{% url 'check-course' course.id %}">Voir</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+</section>
+{% endblock %}

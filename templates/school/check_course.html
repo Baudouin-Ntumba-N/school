@@ -1,0 +1,38 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<section class="container">
+    <div class="container border p-4">
+
+        <p class="h5">
+            Cours: {{ course.nom }}
+        </p>
+        <p class="h5">
+            Classe: {{ course.classe }}
+        </p>
+        <p class="h5">
+            Heures/semaine: {{ course.heures }}
+        </p>
+        <p class="h5">
+            Prof: {{ course.prof }} {{ course.prof.nom}}
+        </p>
+
+        <br>
+        <div class="row">
+            <form enctype="multipart/form-data" method="POST">
+                {% csrf_token %}
+                Fiche de cotation :
+                <br><input class="w-100" type="file" name="fiche" required /> <br>
+                <button class="btn btn-success mt-2 mb-2 p-2" type="submit">
+                    Enregistrer
+                </button>
+            </form>
+
+            <a class="btn btn-secondary w-75 container" href="{% url 'afficher-cotes' course.id %}">
+                Afficher les cotes
+            </a>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<section class="container">
+    <div class="container">
+        <h3 class="container">Bulletin</h3>
+        <div class="row container mt-4 mb-4">
+            <div>
+                <h6>Elève: {{ student.nom }}</h6>
+                <h6>Classe: {{ classe.nom }}</h6>
+            </div>
+        </div>
+        <div class="student-report">
+            <table border="2" class="table table-striped w-75">
+                <thead>
+                    <tr>
+                        <th rowspan="2">Branches</th>
+                        <th colspan="7">Premier semestre</th>
+                    </tr>
+                    <tr>
+                        <th style="width:40px">
+                            Max
+                        </th>
+                        <th>1e P</th>
+                        <th>2e P</th>
+                        <th>Max </th>
+                        <th>Exam</th>
+                        <th>Max Semestre</th>
+                        <th> Total semestre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    {% for course in report_courses %}
+                    <tr>
+                        <td>
+                            {{ course.nom }}
+                        </td>
+                        <td class="bg-secondary text-white">{{ course.course.maximum }}</td>
+
+                        {% if course.periode1 >= course.course.get_half_max %}
+                        <td>{{ course.periode1 }}</td>
+                        {% else %}
+                        <td class="text-danger">{{ course.periode1 }}</td>
+                        {% endif %}
+
+                        {% if course.periode2 >= course.course.get_half_max %}
+                        <td>{{ course.periode2 }}</td>
+                        {% else %}
+                        <td class="text-danger">{{ course.periode2 }}</td>
+                        {% endif %}
+                        <td class="bg-secondary text-white">{{ course.course.get_max_exam }}</td>
+                        <td> {{ course.exam1 }}</td>
+                        <td class="bg-secondary text-white">{{ course.course.get_max_semester }}</td>
+                        <td>{{ course.semester1 }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr><td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Total </td>
+                        <td class="bg-secondary text-white">{{ max_gen_p1 }}</td>
+                        <td>{{ total_gen_p1 }}</td>
+                        <td>{{ total_gen_p2 }}</td>
+                        <td class="bg-secondary text-white">{{ max_gen_exam1 }}</td>
+                        <td>{{ total_gen_exam1 }}</td>
+                        <td class="bg-secondary text-white">{{ max_gen_semester1 }}</td>
+                        <td>{{ total_gen_semester1 }}</td>
+                    </tr>
+                    <tr>
+                        <td>Pourcentage</td>
+                        <td class="bg-secondary"></td>
+                        <td>{{ percentage1 }}%</td>
+                        <td>{{ percentage2 }}%</td>
+                        <td class="bg-secondary"></td>
+                        <td>{{ percentage_exam1 }}%</td>
+                        <td class="bg-secondary"></td>
+                        <td>{{ percentage_semester1 }}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

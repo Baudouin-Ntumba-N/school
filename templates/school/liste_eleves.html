@@ -1,0 +1,24 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<section class="container">
+    <h4>Elèves de {{ classe.nom }}</h4><br>
+    <div style="overflow-x:scroll">
+
+        <table class="table table-striped w-75">
+            <thead>
+                <tr><th> ID</th><th>Noms</th><th></th></tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.id }} </td>
+                    <td>{{ student.nom }}</td>
+                    <td><a class="btn btn-secondary" href="{% url 'student-report' classe.id student.id %}">Voir bulletin</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

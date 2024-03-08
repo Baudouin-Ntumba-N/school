@@ -1,0 +1,49 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<section class="container">
+    <h2> {{ cours.nom }} {{ cours.classe }} </h2>
+    <div style="overflow-x:scroll;">
+        <table class="table table-striped w-75">
+            <thead>
+                <tr><th>Noms</th> <th>1e P/{{ cours.maximum }}</th> <th>2e P/{{cours.maximum }}</th><th>Exam/{{cours.get_max_exam}}</th><th>Total/{{ cours.get_max_semester }}</th></tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.nom }}</td>
+
+                    {% if student.periode1 >= cours.get_half_max %}
+                    <td>{{ student.periode1 }}</td>
+                    {% else %}
+                    <td class="text-danger">{{ student.periode1 }}</td>
+                    {% endif %}
+
+                    {% if student.periode2 >= cours.get_half_max %}
+                    <td>{{ student.periode2 }}</td>
+                    {% else %}
+                    <td class="text-danger">{{ student.periode2 }}</td>
+                    {% endif %}
+
+                    {% if student.exam1 >= cours.get_half_max_exam %}
+                    <td>{{ student.exam1 }}</td>
+                    {% else %}
+                    <td class="text-danger">{{ student.exam1 }}</td>
+                    {% endif %}
+
+                    {% if student.semester >= cours.get_half_max_semester %}
+                    <td>{{ student.semester }}</td>
+                    {% else %}
+                    <td class="text-danger">{{ student.semester }}</td>
+                    {% endif %}
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</section>
+{% endblock %}

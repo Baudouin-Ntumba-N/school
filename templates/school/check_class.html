@@ -1,0 +1,39 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<section class="container">
+    <h5 class="text-success">{{ msg }}</h5>
+    <h4> {{ classe.nom }} </h4> 
+    
+    <a class="btn btn-success mb-4" href="{% url 'create-course' classe.id %}">Ajouter un cours</a>
+    {% if classe.liste_eleves %}
+    <a class="btn btn-secondary mb-4" href="{% url 'liste_eleves' classe.id %}">Liste élèves</a> 
+    {% endif %}
+    
+    <table class="table table-striped w-75">
+        <thead>
+            <tr><th> Cours</th><th></th></tr>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.nom }}</td>
+                <td><a class="btn btn-secondary" href="{% url 'check-course' course.id %}">Voir</a></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div>
+        <form enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            Ajouter liste actualisée d'élèves :
+            <br><input class="w-100" type="file" name="liste_eleves" required /> <br>
+            <button class="btn btn-success mt-2 mb-2 p-2" type="submit">
+                Enregistrer
+            </button>
+        </form>
+    </div>
+
+</section>
+{% endblock %}

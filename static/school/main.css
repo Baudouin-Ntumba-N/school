@@ -1,0 +1,432 @@
+body {
+    margin: 0px;
+}
+a {
+    color: black;
+}
+header a{
+    color: white;
+}
+header .logo a{
+    font-size: 24px;
+}
+header {
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    height: 95px;
+    position: fixed;
+    z-index: 9999999999;
+    width: 100%;
+}
+header .logo a:hover {
+    color: white;
+    text-decoration: none;
+}
+header .logo {
+    position: absolute;
+    top: 20px;
+    left: 2%;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 28px;
+    height:70%;
+    width: 50%;
+}
+header .menu {
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    color: black;
+}
+.navbar a {
+    color: black;
+}
+header .menu-button-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+#menu-button {
+    color: white;
+    border: 1px solid white;
+}
+header .navbar {
+    display: block;
+}
+.navbar .login,
+.navbar .signup {
+    font-weight: bold;
+}
+.btn-primary {
+    background-color: brown;
+}
+.btn:hover {
+    background-color: brown;
+}
+.navbar div {
+    margin: 20px;
+}
+.decor-bar {
+    height: 100px;
+    width: 100%;
+}
+.about-us-div{
+    border: 1px solid gray;
+    width:100%;
+}
+.current-user {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    z-index: 99999999;
+    width: 70px;
+}
+.current-user .image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+/* Customizing file inputs */
+label.photo-label input[type="file"] {
+    position: absolute;
+    opacity:0;
+    z-index: -1;
+
+
+}
+.photo-label{
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    background: #dddddd;
+    display: inline-block;
+
+}
+
+.photo-label:hover {
+    background: #5cbd95;
+}
+.photo-label:active {
+    background: #9fa1a0;
+}
+.photo-label:invalid + span {
+    color: #000000;
+}
+.photo-label:valid + span {
+    color: #ffffff;
+}
+
+/* for cover image */
+
+label.cover-image-label input[type="file"] {
+    position: absolute;
+    opacity:0;
+    z-index: 999999999;
+    width:20px;
+}
+.cover-image-label{
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    background: #dddddd;
+    display: inline-block;
+
+}
+
+.cover-image-label:hover {
+    background: #5cbd95;
+}
+.cover-image-label:active {
+    background: #9fa1a0;
+}
+.cover-image-label:invalid + span {
+    color: #000000;
+}
+.cover-image-label:valid + span {
+    color: #ffffff;
+}
+
+.login-div input{
+ border:1px solid white;
+}
+.password-div{
+    display:flex;
+}
+.password-div, .username-div{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.password-div input{
+    border: 1px solid white;
+}
+.eye-image{
+    margin-top:4px;
+    width:30px;
+    height:30px;
+}
+
+
+section {
+    margin-bottom: 10px;
+    min-height: 400px;
+}
+.signup-div {
+    background-color: white;
+    width: 100%;
+}
+.signup-div fieldset {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+}
+.signup-div input {
+    width: 100%;
+}
+.enroll-div {
+    background-color: white;
+    width: 95%;
+}
+.enroll-div fieldset {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+}
+.enroll-div input {
+    width: 100%;
+}
+.login-div {
+    background-color: white;
+    width: 95%;
+}
+.login-div fieldset {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+}
+.login-div input {
+    width: 100%;
+}
+
+.user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.settings-div {
+    background-color: white;
+    width: 95%;
+}
+.settings-div fieldset {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+}
+.settings-div input {
+    width: 100%;
+}
+.user-profile .profile-div {
+    border-bottom: 1px solid gray;
+    box-shadow: 0px 1px 2px 0px gray;
+}
+.user-profile .profile-div .cover-image {
+    background: url("../main/images/mlg.JPG");
+}
+.user-profile .profile-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+
+.student-report{
+    overflow-x: scroll;
+}
+
+footer {
+    background-color: lightgray;
+    height: 200px;
+    text-align: center;
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+    header .logo {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute;
+        left: 5%;
+        top: 20px;
+    }
+    header .menu {
+        display: block;
+    }
+    #menu-button {
+        display: none;
+    }
+    header .navbar {
+        display: flex;
+    }
+    header .menu {
+        background-color: brown;
+        position: absolute;
+        top: 28px;
+        right: 15px;
+        z-index: 9999999999999999;
+        width: 70%;
+    }
+    .navbar a {
+        color: white;
+    }
+    .navbar div {
+        margin: 0px;
+    }
+
+    .about-us-div{
+        border: 1px solid gray;
+        width:75%;
+    }
+
+
+
+    section {
+        margin-left: 40px;
+    }
+    .signup-div {
+        border: 1px solid lightgray;
+        width: 350px;
+    }
+    .signup-div h1 {
+        text-align: center;
+    }
+    .signup-div fieldset {
+        border: 1px solid lightgray;
+    }
+    .signup-div form div {
+        text-align: left;
+    }
+    .login-div {
+        background-color: white;
+        width: 300px;
+    }
+
+    .settings-div {
+        border: 1px solid lightgray;
+        width: 350px;
+    }
+    .settings-div h1 {
+        text-align: center;
+    }
+    .settings-div fieldset {
+        border: 1px solid lightgray;
+    }
+    .settings-div form div {
+        text-align: left;
+    }
+    aside {
+        position: fixed;
+        display: block;
+        top: 100px;
+        right: 10px;
+        width: 140px;
+        background-color: rgb(250, 250, 250);
+        z-index: 999999999999;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    header .logo {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute;
+        height: 70%;
+        width: 20%;
+        left: 5%; 
+        top: 20px;
+    }
+    header .menu {
+        display: block;
+    }
+    #menu-button {
+        display: none;
+    }
+    header .navbar {
+        display: flex;
+        width: 70%;
+    }
+    header .menu {
+        background-color: brown;
+        position: absolute;
+        top: 28px;
+        right: 15px;
+        z-index: 9999999999999999;
+        width: 70%;
+    }
+    .navbar a {
+        color: white;
+    }
+    .navbar div {
+        margin: 0px;
+    }
+
+    .about-us-div{
+        border: 1px solid gray;
+        width:75%;
+    }
+
+    section {
+        margin-left: 40px;
+    }
+    .signup-div {
+        border: 1px solid lightgray;
+        width: 350px;
+    }
+    .signup-div h1 {
+        text-align: center;
+    }
+    .signup-div fieldset {
+        border: 1px solid lightgray;
+    }
+    .signup-div form div {
+        text-align: left;
+    }
+    .login-div {
+        background-color: white;
+        width: 300px;
+    }
+
+    .settings-div {
+        border: 1px solid lightgray;
+        width: 350px;
+    }
+    .settings-div h1 {
+        text-align: center;
+    }
+    .settings-div fieldset {
+        border: 1px solid lightgray;
+    }
+    .settings-div form div {
+        text-align: left;
+    }
+    aside {
+        position: fixed;
+        display: block;
+        top: 100px;
+        right: 10px;
+        width: 200px;
+        background-color: rgb(250, 250, 250);
+        z-index: 999999999999;
+    }
+}
